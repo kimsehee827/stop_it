@@ -1,22 +1,24 @@
-import Foundation
+import WatchKit
 import SwiftUI
+import Foundation
 import CoreMotion
-
-
 
 //얘는 걷기 및 달리기 같은 활동 유형 모니터링.
 private let activityManager = CMMotionActivityManager()
 //얘는 현재 걸음수 가져오는데 사용
 private let pedometer = CMPedometer()
+//얘는 자이로스코프 값.
+private let motionManager = CMMotionManager()
 
-class TimerViewModel: ObservableObject {
+class ContentViewModel: ObservableObject{
     @Published var timeString: String = "00 : 00 : 00"
     @Published var isStart = false
-    var buttonText: String {
-        if isStart {
-            return "Stop"
-        } else {
-            return "Start"
+    var buttonText: String{
+        if isStart{
+            return "stop"
+        }
+        else {
+            return"start"
         }
     }
     
@@ -24,23 +26,20 @@ class TimerViewModel: ObservableObject {
     var mainTimer: Timer?
     var timeCount: Int = 0
     
-        
-    @State var steps: Int?
+    @State private var steps: Int?
     @State private var output: String?
-
+    @State private var labelX: Double?
+    @State private var labelY: Double?
+    @State private var labelZ: Double?
+    
+    var backgroundColor = Color.init(white: 0, opacity: 100)
+    
+    
     func initializePedometer(){
         if CMMotionActivityManager.isActivityAvailable() {
             activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: { [self](data) in
                 guard let data = data
             else {return}
-                if data.walking{
-                    self.output = "walking"
-                    stopTimer()
-                    print("walking")
-                    if isStart{
-                        isStart.toggle()
-                    }
-                }
                 if data.running{
                     self.output = "running"
                     stopTimer()
@@ -55,13 +54,14 @@ class TimerViewModel: ObservableObject {
     
     func buttonClicked() {
         isStart.toggle()
-        if isStart {
+        if isStart{
             startTimer()
+            backgroundColor = Color.green
         } else {
             stopTimer()
+            backgroundColor = Color.red
         }
     }
-    
     func startTimer() {
         mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.timeCount += 1
@@ -86,4 +86,24 @@ class TimerViewModel: ObservableObject {
         mainTimer?.invalidate()
         mainTimer = nil
     }
+    
 }
+
+
+
+// gyro
+/*
+private func initializeMotion(){
+    
+    if motionManager.isAccelerometerAvailable{
+        //motionManager.startGyroUpdates(to: OperationQueue.main, withHandler: <#T##CMGyroHandler##CMGyroHandler##(CMGyroData?, Error?) -> Void#>)
+        motionManager.startAccelerometerUpdates(to: .main, withHandler: { [self](gyro: CMAccelerometerData?, error) in
+            guard let gyro = gyro, error == nil else {return}
+            labelX = gyro.acceleration.x
+            labelY = gyro.acceleration.y
+            labelZ = gyro.acceleration.z
+        })
+    }
+
+}
+*/

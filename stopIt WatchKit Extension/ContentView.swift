@@ -1,16 +1,23 @@
-//
-//  ContentView.swift
-//  stopIt WatchKit Extension
-//
-//  Created by sookmyung on 03/09/2021.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = ContentViewModel()
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        
+        Button(action: viewModel.buttonClicked){
+            ZStack(alignment: .center){
+                Circle()
+                    .frame(width: 160, height: 160, alignment: .center)
+                    .foregroundColor(viewModel.backgroundColor)
+
+                
+                Circle()
+                    .foregroundColor(.black)
+                    .frame(width: 150, height: 150, alignment: .center)
+                Text(verbatim: viewModel.timeString)
+                    .font(.system(size: 30))
+            }
+        }//.buttonStyle(playinButtonStyle())
     }
 }
 

@@ -1,16 +1,14 @@
-//
-//  HostingController.swift
-//  stopIt WatchKit Extension
-//
-//  Created by sookmyung on 03/09/2021.
-//
-
-import WatchKit
-import Foundation
 import SwiftUI
 
-class HostingController: WKHostingController<ContentView> {
-    override var body: ContentView {
-        return ContentView()
+@main
+struct stepApp: App {
+    @SceneBuilder var body: some Scene {
+        WindowGroup {
+            NavigationView {
+                ContentView()
+            }
+        }
+
+        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
 }

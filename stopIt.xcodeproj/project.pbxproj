@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075B7E4926E259D800D49594 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075B7E4826E259D800D49594 /* ContentViewModel.swift */; };
 		1F044DCF72B78C813406DC44 /* Pods_stopIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2B66379FA5D7F32F427C3 /* Pods_stopIt.framework */; };
 		7596B58626E2434700B1BDB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B58526E2434700B1BDB9 /* AppDelegate.swift */; };
 		7596B58826E2434700B1BDB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B58726E2434700B1BDB9 /* SceneDelegate.swift */; };
@@ -109,6 +110,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		075B7E4826E259D800D49594 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		41A2B66379FA5D7F32F427C3 /* Pods_stopIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stopIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7596B58226E2434700B1BDB9 /* stopIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stopIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7596B58526E2434700B1BDB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				7596B5AA26E2434900B1BDB9 /* HostingController.swift */,
 				7596B5AC26E2434900B1BDB9 /* ContentView.swift */,
 				7596B5AE26E2434900B1BDB9 /* ExtensionDelegate.swift */,
+				075B7E4826E259D800D49594 /* ContentViewModel.swift */,
 				7596B5B026E2434900B1BDB9 /* NotificationController.swift */,
 				7596B5B226E2434900B1BDB9 /* NotificationView.swift */,
 				7596B5B426E2434900B1BDB9 /* ComplicationController.swift */,
@@ -675,6 +678,7 @@
 				7596B5AD26E2434900B1BDB9 /* ContentView.swift in Sources */,
 				7596B5AB26E2434900B1BDB9 /* HostingController.swift in Sources */,
 				7596B5B126E2434900B1BDB9 /* NotificationController.swift in Sources */,
+				075B7E4926E259D800D49594 /* ContentViewModel.swift in Sources */,
 				7596B5AF26E2434900B1BDB9 /* ExtensionDelegate.swift in Sources */,
 				7596B5B326E2434900B1BDB9 /* NotificationView.swift in Sources */,
 				7596B5B526E2434900B1BDB9 /* ComplicationController.swift in Sources */,
