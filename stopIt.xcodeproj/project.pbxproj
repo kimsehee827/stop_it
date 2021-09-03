@@ -1,0 +1,1021 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F044DCF72B78C813406DC44 /* Pods_stopIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2B66379FA5D7F32F427C3 /* Pods_stopIt.framework */; };
+		7596B58626E2434700B1BDB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B58526E2434700B1BDB9 /* AppDelegate.swift */; };
+		7596B58826E2434700B1BDB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B58726E2434700B1BDB9 /* SceneDelegate.swift */; };
+		7596B58C26E2434700B1BDB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7596B58B26E2434700B1BDB9 /* Assets.xcassets */; };
+		7596B58F26E2434700B1BDB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7596B58E26E2434700B1BDB9 /* Preview Assets.xcassets */; };
+		7596B59226E2434700B1BDB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7596B59026E2434700B1BDB9 /* LaunchScreen.storyboard */; };
+		7596B59726E2434800B1BDB9 /* stopIt WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7596B59626E2434800B1BDB9 /* stopIt WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7596B59D26E2434800B1BDB9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7596B59B26E2434800B1BDB9 /* Interface.storyboard */; };
+		7596B59F26E2434800B1BDB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7596B59E26E2434800B1BDB9 /* Assets.xcassets */; };
+		7596B5A626E2434900B1BDB9 /* stopIt WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7596B5A526E2434900B1BDB9 /* stopIt WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7596B5AB26E2434900B1BDB9 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5AA26E2434900B1BDB9 /* HostingController.swift */; };
+		7596B5AD26E2434900B1BDB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5AC26E2434900B1BDB9 /* ContentView.swift */; };
+		7596B5AF26E2434900B1BDB9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5AE26E2434900B1BDB9 /* ExtensionDelegate.swift */; };
+		7596B5B126E2434900B1BDB9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5B026E2434900B1BDB9 /* NotificationController.swift */; };
+		7596B5B326E2434900B1BDB9 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5B226E2434900B1BDB9 /* NotificationView.swift */; };
+		7596B5B526E2434900B1BDB9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5B426E2434900B1BDB9 /* ComplicationController.swift */; };
+		7596B5B726E2434900B1BDB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7596B5B626E2434900B1BDB9 /* Assets.xcassets */; };
+		7596B5BA26E2434900B1BDB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7596B5B926E2434900B1BDB9 /* Preview Assets.xcassets */; };
+		7596B5CC26E243AB00B1BDB9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7596B5CB26E243AB00B1BDB9 /* HealthKit.framework */; };
+		7596B60326E2453200B1BDB9 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5CF26E2453200B1BDB9 /* TaskListViewModel.swift */; };
+		7596B60426E2453200B1BDB9 /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5D026E2453200B1BDB9 /* TaskCellViewModel.swift */; };
+		7596B60526E2453200B1BDB9 /* StudyTimeGraphBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5D126E2453200B1BDB9 /* StudyTimeGraphBarViewModel.swift */; };
+		7596B60626E2453200B1BDB9 /* StudyTimeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5D226E2453200B1BDB9 /* StudyTimeTableViewModel.swift */; };
+		7596B60726E2453200B1BDB9 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5D326E2453200B1BDB9 /* ContentViewModel.swift */; };
+		7596B60826E2453200B1BDB9 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5D426E2453200B1BDB9 /* TimerViewModel.swift */; };
+		7596B60926E2453200B1BDB9 /* StepCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5D526E2453200B1BDB9 /* StepCountViewModel.swift */; };
+		7596B60A26E2453200B1BDB9 /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5D626E2453200B1BDB9 /* HeartRateViewModel.swift */; };
+		7596B60C26E2453200B1BDB9 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5DA26E2453200B1BDB9 /* TimerView.swift */; };
+		7596B60D26E2453200B1BDB9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5DC26E2453200B1BDB9 /* CardView.swift */; };
+		7596B60E26E2453200B1BDB9 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5DD26E2453200B1BDB9 /* CircleImage.swift */; };
+		7596B60F26E2453200B1BDB9 /* GoogleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5DE26E2453200B1BDB9 /* GoogleLoginView.swift */; };
+		7596B61026E2453200B1BDB9 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5DF26E2453200B1BDB9 /* PageView.swift */; };
+		7596B61126E2453200B1BDB9 /* GraphCapsule2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5E126E2453200B1BDB9 /* GraphCapsule2.swift */; };
+		7596B61226E2453200B1BDB9 /* StepCountGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5E226E2453200B1BDB9 /* StepCountGraph.swift */; };
+		7596B61326E2453200B1BDB9 /* StudyTimeGraphBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5E426E2453200B1BDB9 /* StudyTimeGraphBar.swift */; };
+		7596B61426E2453200B1BDB9 /* GraphBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5E526E2453200B1BDB9 /* GraphBar.swift */; };
+		7596B61526E2453200B1BDB9 /* StudyTimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5E626E2453200B1BDB9 /* StudyTimeTableView.swift */; };
+		7596B61626E2453200B1BDB9 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5E826E2453200B1BDB9 /* TaskListView.swift */; };
+		7596B61726E2453200B1BDB9 /* TotalTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5E926E2453200B1BDB9 /* TotalTaskView.swift */; };
+		7596B61826E2453200B1BDB9 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5EA26E2453200B1BDB9 /* TaskCell.swift */; };
+		7596B61926E2453200B1BDB9 /* HeartRateGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5ED26E2453200B1BDB9 /* HeartRateGraph.swift */; };
+		7596B61A26E2453200B1BDB9 /* HeartRateGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5EF26E2453200B1BDB9 /* HeartRateGridView.swift */; };
+		7596B61B26E2453200B1BDB9 /* MinMaxHeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F026E2453200B1BDB9 /* MinMaxHeartRateView.swift */; };
+		7596B61C26E2453200B1BDB9 /* HeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F126E2453200B1BDB9 /* HeartRateView.swift */; };
+		7596B61D26E2453200B1BDB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F226E2453200B1BDB9 /* ContentView.swift */; };
+		7596B61E26E2453200B1BDB9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F426E2453200B1BDB9 /* Date.swift */; };
+		7596B61F26E2453200B1BDB9 /* StudyTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F526E2453200B1BDB9 /* StudyTimeModel.swift */; };
+		7596B62026E2453200B1BDB9 /* HealthKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F726E2453200B1BDB9 /* HealthKitModel.swift */; };
+		7596B62126E2453200B1BDB9 /* SleepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F826E2453200B1BDB9 /* SleepModel.swift */; };
+		7596B62226E2453200B1BDB9 /* StepCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FA26E2453200B1BDB9 /* StepCountModel.swift */; };
+		7596B62326E2453200B1BDB9 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FB26E2453200B1BDB9 /* HeartRateModel.swift */; };
+		7596B62426E2453200B1BDB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FC26E2453200B1BDB9 /* User.swift */; };
+		7596B62526E2453200B1BDB9 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FD26E2453200B1BDB9 /* DatabaseModel.swift */; };
+		7596B62626E2453200B1BDB9 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FE26E2453200B1BDB9 /* Task.swift */; };
+		7596B62726E2453200B1BDB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7596B5FF26E2453200B1BDB9 /* GoogleService-Info.plist */; };
+		7596B62826E2453200B1BDB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7596B60126E2453200B1BDB9 /* LaunchScreen.storyboard */; };
+		7596B6BB26E2524100B1BDB9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7596B6BA26E2524100B1BDB9 /* .gitignore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7596B59826E2434800B1BDB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7596B57A26E2434600B1BDB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7596B59526E2434800B1BDB9;
+			remoteInfo = "stopIt WatchKit App";
+		};
+		7596B5A726E2434900B1BDB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7596B57A26E2434600B1BDB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7596B5A426E2434800B1BDB9;
+			remoteInfo = "stopIt WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7596B5C226E2434900B1BDB9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7596B5A626E2434900B1BDB9 /* stopIt WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7596B5C626E2434900B1BDB9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				7596B59726E2434800B1BDB9 /* stopIt WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		41A2B66379FA5D7F32F427C3 /* Pods_stopIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stopIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7596B58226E2434700B1BDB9 /* stopIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stopIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7596B58526E2434700B1BDB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7596B58726E2434700B1BDB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7596B58B26E2434700B1BDB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7596B58E26E2434700B1BDB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7596B59126E2434700B1BDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7596B59326E2434700B1BDB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7596B59626E2434800B1BDB9 /* stopIt WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "stopIt WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7596B59C26E2434800B1BDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		7596B59E26E2434800B1BDB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7596B5A026E2434800B1BDB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7596B5A526E2434900B1BDB9 /* stopIt WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "stopIt WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7596B5AA26E2434900B1BDB9 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		7596B5AC26E2434900B1BDB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7596B5AE26E2434900B1BDB9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		7596B5B026E2434900B1BDB9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		7596B5B226E2434900B1BDB9 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		7596B5B426E2434900B1BDB9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		7596B5B626E2434900B1BDB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7596B5B926E2434900B1BDB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7596B5BB26E2434900B1BDB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7596B5BC26E2434900B1BDB9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		7596B5CB26E243AB00B1BDB9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		7596B5CF26E2453200B1BDB9 /* TaskListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		7596B5D026E2453200B1BDB9 /* TaskCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
+		7596B5D126E2453200B1BDB9 /* StudyTimeGraphBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTimeGraphBarViewModel.swift; sourceTree = "<group>"; };
+		7596B5D226E2453200B1BDB9 /* StudyTimeTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTimeTableViewModel.swift; sourceTree = "<group>"; };
+		7596B5D326E2453200B1BDB9 /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		7596B5D426E2453200B1BDB9 /* TimerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		7596B5D526E2453200B1BDB9 /* StepCountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCountViewModel.swift; sourceTree = "<group>"; };
+		7596B5D626E2453200B1BDB9 /* HeartRateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateViewModel.swift; sourceTree = "<group>"; };
+		7596B5DA26E2453200B1BDB9 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		7596B5DC26E2453200B1BDB9 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		7596B5DD26E2453200B1BDB9 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		7596B5DE26E2453200B1BDB9 /* GoogleLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLoginView.swift; sourceTree = "<group>"; };
+		7596B5DF26E2453200B1BDB9 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		7596B5E126E2453200B1BDB9 /* GraphCapsule2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphCapsule2.swift; sourceTree = "<group>"; };
+		7596B5E226E2453200B1BDB9 /* StepCountGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCountGraph.swift; sourceTree = "<group>"; };
+		7596B5E426E2453200B1BDB9 /* StudyTimeGraphBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTimeGraphBar.swift; sourceTree = "<group>"; };
+		7596B5E526E2453200B1BDB9 /* GraphBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphBar.swift; sourceTree = "<group>"; };
+		7596B5E626E2453200B1BDB9 /* StudyTimeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTimeTableView.swift; sourceTree = "<group>"; };
+		7596B5E826E2453200B1BDB9 /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		7596B5E926E2453200B1BDB9 /* TotalTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalTaskView.swift; sourceTree = "<group>"; };
+		7596B5EA26E2453200B1BDB9 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		7596B5ED26E2453200B1BDB9 /* HeartRateGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateGraph.swift; sourceTree = "<group>"; };
+		7596B5EF26E2453200B1BDB9 /* HeartRateGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateGridView.swift; sourceTree = "<group>"; };
+		7596B5F026E2453200B1BDB9 /* MinMaxHeartRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinMaxHeartRateView.swift; sourceTree = "<group>"; };
+		7596B5F126E2453200B1BDB9 /* HeartRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateView.swift; sourceTree = "<group>"; };
+		7596B5F226E2453200B1BDB9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7596B5F426E2453200B1BDB9 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		7596B5F526E2453200B1BDB9 /* StudyTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTimeModel.swift; sourceTree = "<group>"; };
+		7596B5F726E2453200B1BDB9 /* HealthKitModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitModel.swift; sourceTree = "<group>"; };
+		7596B5F826E2453200B1BDB9 /* SleepModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepModel.swift; sourceTree = "<group>"; };
+		7596B5FA26E2453200B1BDB9 /* StepCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCountModel.swift; sourceTree = "<group>"; };
+		7596B5FB26E2453200B1BDB9 /* HeartRateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateModel.swift; sourceTree = "<group>"; };
+		7596B5FC26E2453200B1BDB9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7596B5FD26E2453200B1BDB9 /* DatabaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
+		7596B5FE26E2453200B1BDB9 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		7596B5FF26E2453200B1BDB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7596B60226E2453200B1BDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7596B6BA26E2524100B1BDB9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E0AB460CFBF37C72105E0230 /* Pods-stopIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopIt.debug.xcconfig"; path = "Target Support Files/Pods-stopIt/Pods-stopIt.debug.xcconfig"; sourceTree = "<group>"; };
+		F3DDC948E87F8D47DB69F2C2 /* Pods-stopIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopIt.release.xcconfig"; path = "Target Support Files/Pods-stopIt/Pods-stopIt.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7596B57F26E2434700B1BDB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F044DCF72B78C813406DC44 /* Pods_stopIt.framework in Frameworks */,
+				7596B5CC26E243AB00B1BDB9 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7596B5A226E2434800B1BDB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B67D2315C6F575D17B8327B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6DC62ECB1912D1B208C42123 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0AB460CFBF37C72105E0230 /* Pods-stopIt.debug.xcconfig */,
+				F3DDC948E87F8D47DB69F2C2 /* Pods-stopIt.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7596B57926E2434600B1BDB9 = {
+			isa = PBXGroup;
+			children = (
+				7596B6BA26E2524100B1BDB9 /* .gitignore */,
+				7596B58426E2434700B1BDB9 /* stopIt */,
+				7596B59A26E2434800B1BDB9 /* stopIt WatchKit App */,
+				7596B5A926E2434900B1BDB9 /* stopIt WatchKit Extension */,
+				7596B58326E2434700B1BDB9 /* Products */,
+				6DC62ECB1912D1B208C42123 /* Pods */,
+				CD0A6CFF6015A1E49FD8F1FB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7596B58326E2434700B1BDB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7596B58226E2434700B1BDB9 /* stopIt.app */,
+				7596B59626E2434800B1BDB9 /* stopIt WatchKit App.app */,
+				7596B5A526E2434900B1BDB9 /* stopIt WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7596B58426E2434700B1BDB9 /* stopIt */ = {
+			isa = PBXGroup;
+			children = (
+				7596B60026E2453200B1BDB9 /* Base.lproj */,
+				7596B5FF26E2453200B1BDB9 /* GoogleService-Info.plist */,
+				7596B5F326E2453200B1BDB9 /* Models */,
+				7596B5CE26E2453200B1BDB9 /* ViewModels */,
+				7596B5D826E2453200B1BDB9 /* Views */,
+				7596B58526E2434700B1BDB9 /* AppDelegate.swift */,
+				7596B58726E2434700B1BDB9 /* SceneDelegate.swift */,
+				7596B58B26E2434700B1BDB9 /* Assets.xcassets */,
+				7596B59026E2434700B1BDB9 /* LaunchScreen.storyboard */,
+				7596B59326E2434700B1BDB9 /* Info.plist */,
+				7596B58D26E2434700B1BDB9 /* Preview Content */,
+			);
+			path = stopIt;
+			sourceTree = "<group>";
+		};
+		7596B58D26E2434700B1BDB9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7596B58E26E2434700B1BDB9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7596B59A26E2434800B1BDB9 /* stopIt WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				7596B59B26E2434800B1BDB9 /* Interface.storyboard */,
+				7596B59E26E2434800B1BDB9 /* Assets.xcassets */,
+				7596B5A026E2434800B1BDB9 /* Info.plist */,
+			);
+			path = "stopIt WatchKit App";
+			sourceTree = "<group>";
+		};
+		7596B5A926E2434900B1BDB9 /* stopIt WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5AA26E2434900B1BDB9 /* HostingController.swift */,
+				7596B5AC26E2434900B1BDB9 /* ContentView.swift */,
+				7596B5AE26E2434900B1BDB9 /* ExtensionDelegate.swift */,
+				7596B5B026E2434900B1BDB9 /* NotificationController.swift */,
+				7596B5B226E2434900B1BDB9 /* NotificationView.swift */,
+				7596B5B426E2434900B1BDB9 /* ComplicationController.swift */,
+				7596B5B626E2434900B1BDB9 /* Assets.xcassets */,
+				7596B5BB26E2434900B1BDB9 /* Info.plist */,
+				7596B5BC26E2434900B1BDB9 /* PushNotificationPayload.apns */,
+				7596B5B826E2434900B1BDB9 /* Preview Content */,
+			);
+			path = "stopIt WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		7596B5B826E2434900B1BDB9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5B926E2434900B1BDB9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7596B5CE26E2453200B1BDB9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5CF26E2453200B1BDB9 /* TaskListViewModel.swift */,
+				7596B5D026E2453200B1BDB9 /* TaskCellViewModel.swift */,
+				7596B5D126E2453200B1BDB9 /* StudyTimeGraphBarViewModel.swift */,
+				7596B5D226E2453200B1BDB9 /* StudyTimeTableViewModel.swift */,
+				7596B5D326E2453200B1BDB9 /* ContentViewModel.swift */,
+				7596B5D426E2453200B1BDB9 /* TimerViewModel.swift */,
+				7596B5D526E2453200B1BDB9 /* StepCountViewModel.swift */,
+				7596B5D626E2453200B1BDB9 /* HeartRateViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7596B5D826E2453200B1BDB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5D926E2453200B1BDB9 /* Timer */,
+				7596B5DB26E2453200B1BDB9 /* SubViews */,
+				7596B5E026E2453200B1BDB9 /* StepCount */,
+				7596B5E326E2453200B1BDB9 /* StudyTime */,
+				7596B5E726E2453200B1BDB9 /* Task */,
+				7596B5EB26E2453200B1BDB9 /* HeartRate */,
+				7596B5F226E2453200B1BDB9 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7596B5D926E2453200B1BDB9 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5DA26E2453200B1BDB9 /* TimerView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		7596B5DB26E2453200B1BDB9 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5DC26E2453200B1BDB9 /* CardView.swift */,
+				7596B5DD26E2453200B1BDB9 /* CircleImage.swift */,
+				7596B5DE26E2453200B1BDB9 /* GoogleLoginView.swift */,
+				7596B5DF26E2453200B1BDB9 /* PageView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		7596B5E026E2453200B1BDB9 /* StepCount */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5E126E2453200B1BDB9 /* GraphCapsule2.swift */,
+				7596B5E226E2453200B1BDB9 /* StepCountGraph.swift */,
+			);
+			path = StepCount;
+			sourceTree = "<group>";
+		};
+		7596B5E326E2453200B1BDB9 /* StudyTime */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5E426E2453200B1BDB9 /* StudyTimeGraphBar.swift */,
+				7596B5E526E2453200B1BDB9 /* GraphBar.swift */,
+				7596B5E626E2453200B1BDB9 /* StudyTimeTableView.swift */,
+			);
+			path = StudyTime;
+			sourceTree = "<group>";
+		};
+		7596B5E726E2453200B1BDB9 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5E826E2453200B1BDB9 /* TaskListView.swift */,
+				7596B5E926E2453200B1BDB9 /* TotalTaskView.swift */,
+				7596B5EA26E2453200B1BDB9 /* TaskCell.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		7596B5EB26E2453200B1BDB9 /* HeartRate */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5EC26E2453200B1BDB9 /* Graph */,
+				7596B5EE26E2453200B1BDB9 /* SubViews */,
+				7596B5F126E2453200B1BDB9 /* HeartRateView.swift */,
+			);
+			path = HeartRate;
+			sourceTree = "<group>";
+		};
+		7596B5EC26E2453200B1BDB9 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5ED26E2453200B1BDB9 /* HeartRateGraph.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		7596B5EE26E2453200B1BDB9 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5EF26E2453200B1BDB9 /* HeartRateGridView.swift */,
+				7596B5F026E2453200B1BDB9 /* MinMaxHeartRateView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		7596B5F326E2453200B1BDB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5F426E2453200B1BDB9 /* Date.swift */,
+				7596B5F526E2453200B1BDB9 /* StudyTimeModel.swift */,
+				7596B5F626E2453200B1BDB9 /* HealthKit */,
+				7596B5FC26E2453200B1BDB9 /* User.swift */,
+				7596B5FD26E2453200B1BDB9 /* DatabaseModel.swift */,
+				7596B5FE26E2453200B1BDB9 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7596B5F626E2453200B1BDB9 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5F726E2453200B1BDB9 /* HealthKitModel.swift */,
+				7596B5F826E2453200B1BDB9 /* SleepModel.swift */,
+				7596B5F926E2453200B1BDB9 /* StepCount */,
+				7596B5FB26E2453200B1BDB9 /* HeartRateModel.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		7596B5F926E2453200B1BDB9 /* StepCount */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5FA26E2453200B1BDB9 /* StepCountModel.swift */,
+			);
+			path = StepCount;
+			sourceTree = "<group>";
+		};
+		7596B60026E2453200B1BDB9 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				7596B60126E2453200B1BDB9 /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		CD0A6CFF6015A1E49FD8F1FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7596B5CB26E243AB00B1BDB9 /* HealthKit.framework */,
+				41A2B66379FA5D7F32F427C3 /* Pods_stopIt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7596B58126E2434700B1BDB9 /* stopIt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7596B5C726E2434900B1BDB9 /* Build configuration list for PBXNativeTarget "stopIt" */;
+			buildPhases = (
+				8B1B541183B8F95854CC4AAF /* [CP] Check Pods Manifest.lock */,
+				7596B57E26E2434700B1BDB9 /* Sources */,
+				7596B57F26E2434700B1BDB9 /* Frameworks */,
+				7596B58026E2434700B1BDB9 /* Resources */,
+				7596B5C626E2434900B1BDB9 /* Embed Watch Content */,
+				9E317466ED0079FA04BE427A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7596B59926E2434800B1BDB9 /* PBXTargetDependency */,
+			);
+			name = stopIt;
+			productName = stopIt;
+			productReference = 7596B58226E2434700B1BDB9 /* stopIt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7596B59526E2434800B1BDB9 /* stopIt WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7596B5C326E2434900B1BDB9 /* Build configuration list for PBXNativeTarget "stopIt WatchKit App" */;
+			buildPhases = (
+				7596B59426E2434800B1BDB9 /* Resources */,
+				7596B5C226E2434900B1BDB9 /* Embed App Extensions */,
+				B67D2315C6F575D17B8327B9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7596B5A826E2434900B1BDB9 /* PBXTargetDependency */,
+			);
+			name = "stopIt WatchKit App";
+			productName = "stopIt WatchKit App";
+			productReference = 7596B59626E2434800B1BDB9 /* stopIt WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		7596B5A426E2434800B1BDB9 /* stopIt WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7596B5BF26E2434900B1BDB9 /* Build configuration list for PBXNativeTarget "stopIt WatchKit Extension" */;
+			buildPhases = (
+				7596B5A126E2434800B1BDB9 /* Sources */,
+				7596B5A226E2434800B1BDB9 /* Frameworks */,
+				7596B5A326E2434800B1BDB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "stopIt WatchKit Extension";
+			productName = "stopIt WatchKit Extension";
+			productReference = 7596B5A526E2434900B1BDB9 /* stopIt WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7596B57A26E2434600B1BDB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					7596B58126E2434700B1BDB9 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					7596B59526E2434800B1BDB9 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					7596B5A426E2434800B1BDB9 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 7596B57D26E2434600B1BDB9 /* Build configuration list for PBXProject "stopIt" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7596B57926E2434600B1BDB9;
+			productRefGroup = 7596B58326E2434700B1BDB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7596B58126E2434700B1BDB9 /* stopIt */,
+				7596B59526E2434800B1BDB9 /* stopIt WatchKit App */,
+				7596B5A426E2434800B1BDB9 /* stopIt WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7596B58026E2434700B1BDB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7596B6BB26E2524100B1BDB9 /* .gitignore in Resources */,
+				7596B59226E2434700B1BDB9 /* LaunchScreen.storyboard in Resources */,
+				7596B62726E2453200B1BDB9 /* GoogleService-Info.plist in Resources */,
+				7596B62826E2453200B1BDB9 /* LaunchScreen.storyboard in Resources */,
+				7596B58F26E2434700B1BDB9 /* Preview Assets.xcassets in Resources */,
+				7596B58C26E2434700B1BDB9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7596B59426E2434800B1BDB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7596B59F26E2434800B1BDB9 /* Assets.xcassets in Resources */,
+				7596B59D26E2434800B1BDB9 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7596B5A326E2434800B1BDB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7596B5BA26E2434900B1BDB9 /* Preview Assets.xcassets in Resources */,
+				7596B5B726E2434900B1BDB9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B1B541183B8F95854CC4AAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-stopIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E317466ED0079FA04BE427A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-stopIt/Pods-stopIt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-stopIt/Pods-stopIt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-stopIt/Pods-stopIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7596B57E26E2434700B1BDB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7596B58626E2434700B1BDB9 /* AppDelegate.swift in Sources */,
+				7596B60A26E2453200B1BDB9 /* HeartRateViewModel.swift in Sources */,
+				7596B61D26E2453200B1BDB9 /* ContentView.swift in Sources */,
+				7596B60926E2453200B1BDB9 /* StepCountViewModel.swift in Sources */,
+				7596B61326E2453200B1BDB9 /* StudyTimeGraphBar.swift in Sources */,
+				7596B61E26E2453200B1BDB9 /* Date.swift in Sources */,
+				7596B60E26E2453200B1BDB9 /* CircleImage.swift in Sources */,
+				7596B60426E2453200B1BDB9 /* TaskCellViewModel.swift in Sources */,
+				7596B58826E2434700B1BDB9 /* SceneDelegate.swift in Sources */,
+				7596B61B26E2453200B1BDB9 /* MinMaxHeartRateView.swift in Sources */,
+				7596B60726E2453200B1BDB9 /* ContentViewModel.swift in Sources */,
+				7596B61426E2453200B1BDB9 /* GraphBar.swift in Sources */,
+				7596B62626E2453200B1BDB9 /* Task.swift in Sources */,
+				7596B62526E2453200B1BDB9 /* DatabaseModel.swift in Sources */,
+				7596B60C26E2453200B1BDB9 /* TimerView.swift in Sources */,
+				7596B62426E2453200B1BDB9 /* User.swift in Sources */,
+				7596B61526E2453200B1BDB9 /* StudyTimeTableView.swift in Sources */,
+				7596B60826E2453200B1BDB9 /* TimerViewModel.swift in Sources */,
+				7596B60526E2453200B1BDB9 /* StudyTimeGraphBarViewModel.swift in Sources */,
+				7596B61C26E2453200B1BDB9 /* HeartRateView.swift in Sources */,
+				7596B61026E2453200B1BDB9 /* PageView.swift in Sources */,
+				7596B61626E2453200B1BDB9 /* TaskListView.swift in Sources */,
+				7596B60626E2453200B1BDB9 /* StudyTimeTableViewModel.swift in Sources */,
+				7596B60D26E2453200B1BDB9 /* CardView.swift in Sources */,
+				7596B62126E2453200B1BDB9 /* SleepModel.swift in Sources */,
+				7596B62226E2453200B1BDB9 /* StepCountModel.swift in Sources */,
+				7596B61926E2453200B1BDB9 /* HeartRateGraph.swift in Sources */,
+				7596B61F26E2453200B1BDB9 /* StudyTimeModel.swift in Sources */,
+				7596B61226E2453200B1BDB9 /* StepCountGraph.swift in Sources */,
+				7596B62026E2453200B1BDB9 /* HealthKitModel.swift in Sources */,
+				7596B61726E2453200B1BDB9 /* TotalTaskView.swift in Sources */,
+				7596B60326E2453200B1BDB9 /* TaskListViewModel.swift in Sources */,
+				7596B60F26E2453200B1BDB9 /* GoogleLoginView.swift in Sources */,
+				7596B61A26E2453200B1BDB9 /* HeartRateGridView.swift in Sources */,
+				7596B61826E2453200B1BDB9 /* TaskCell.swift in Sources */,
+				7596B62326E2453200B1BDB9 /* HeartRateModel.swift in Sources */,
+				7596B61126E2453200B1BDB9 /* GraphCapsule2.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7596B5A126E2434800B1BDB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7596B5AD26E2434900B1BDB9 /* ContentView.swift in Sources */,
+				7596B5AB26E2434900B1BDB9 /* HostingController.swift in Sources */,
+				7596B5B126E2434900B1BDB9 /* NotificationController.swift in Sources */,
+				7596B5AF26E2434900B1BDB9 /* ExtensionDelegate.swift in Sources */,
+				7596B5B326E2434900B1BDB9 /* NotificationView.swift in Sources */,
+				7596B5B526E2434900B1BDB9 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7596B59926E2434800B1BDB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7596B59526E2434800B1BDB9 /* stopIt WatchKit App */;
+			targetProxy = 7596B59826E2434800B1BDB9 /* PBXContainerItemProxy */;
+		};
+		7596B5A826E2434900B1BDB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7596B5A426E2434800B1BDB9 /* stopIt WatchKit Extension */;
+			targetProxy = 7596B5A726E2434900B1BDB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7596B59026E2434700B1BDB9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7596B59126E2434700B1BDB9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7596B59B26E2434800B1BDB9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7596B59C26E2434800B1BDB9 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		7596B60126E2453200B1BDB9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7596B60226E2453200B1BDB9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7596B5BD26E2434900B1BDB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7596B5BE26E2434900B1BDB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		7596B5C026E2434900B1BDB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"stopIt WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6X8H3UXVFF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "stopIt WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jay.stopIt.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		7596B5C126E2434900B1BDB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"stopIt WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6X8H3UXVFF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "stopIt WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jay.stopIt.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		7596B5C426E2434900B1BDB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X8H3UXVFF;
+				IBSC_MODULE = stopIt_WatchKit_Extension;
+				INFOPLIST_FILE = "stopIt WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jay.stopIt.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		7596B5C526E2434900B1BDB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X8H3UXVFF;
+				IBSC_MODULE = stopIt_WatchKit_Extension;
+				INFOPLIST_FILE = "stopIt WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jay.stopIt.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		7596B5C826E2434900B1BDB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0AB460CFBF37C72105E0230 /* Pods-stopIt.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = stopIt/stopIt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"stopIt/Preview Content\"";
+				DEVELOPMENT_TEAM = 6X8H3UXVFF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = stopIt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jay.stopIt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7596B5C926E2434900B1BDB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3DDC948E87F8D47DB69F2C2 /* Pods-stopIt.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = stopIt/stopIt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"stopIt/Preview Content\"";
+				DEVELOPMENT_TEAM = 6X8H3UXVFF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = stopIt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jay.stopIt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7596B57D26E2434600B1BDB9 /* Build configuration list for PBXProject "stopIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7596B5BD26E2434900B1BDB9 /* Debug */,
+				7596B5BE26E2434900B1BDB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7596B5BF26E2434900B1BDB9 /* Build configuration list for PBXNativeTarget "stopIt WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7596B5C026E2434900B1BDB9 /* Debug */,
+				7596B5C126E2434900B1BDB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7596B5C326E2434900B1BDB9 /* Build configuration list for PBXNativeTarget "stopIt WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7596B5C426E2434900B1BDB9 /* Debug */,
+				7596B5C526E2434900B1BDB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7596B5C726E2434900B1BDB9 /* Build configuration list for PBXNativeTarget "stopIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7596B5C826E2434900B1BDB9 /* Debug */,
+				7596B5C926E2434900B1BDB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7596B57A26E2434600B1BDB9 /* Project object */;
+}
