@@ -29,7 +29,7 @@ struct HeartRateGridView: View {
             }
             VStack(spacing: 0) {
                 Spacer()
-                Color.blue.frame(width: width, height: 5)
+                Color.yellow.frame(width: width, height: 3)
                     .padding([.bottom], (underline - 20) * (height / 180))
             }
             .frame(height: height)

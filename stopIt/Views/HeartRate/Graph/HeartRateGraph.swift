@@ -29,10 +29,26 @@ struct HeartRateGraph: View {
                         .padding(.trailing, 10)
                         .foregroundColor(Color("heartrate2"))
                 }
-                .frame(height: 30)
+                
+                HStack {
+                    Spacer()
+                    Text("노란색 라인 이하의 심박수: 수면시간으로 추정")
+                        .padding(.bottom, 10)
+                        .padding(.trailing, 10)
+                        .foregroundColor(Color("heartrate2"))
+                }
+                
+                HStack {
+                    Spacer()
+                    Text("주의: 수면시간 추정시 일부 오차가 있을 수 있습니다")
+                        .padding(.bottom, 10)
+                        .padding(.trailing, 10)
+                        .foregroundColor(Color("heartrate2"))
+                }
+               
              }
          }
-         .frame(width: UIScreen.main.bounds.width - 20, height: 520, alignment: .center)
+         .frame(width: UIScreen.main.bounds.width - 20, height: 643, alignment: .center)
          .cornerRadius(10)
     }
     
@@ -62,6 +78,6 @@ struct HeartRateGraph: View {
 
 struct HeartRateGraph_Previews: PreviewProvider {
     static var previews: some View {
-        HeartRateGraph(heartRate: [0: HeartRateMinMax(min:60, max: 60), 23: HeartRateMinMax(min: 110, max: 155)], underline: 88)
+        HeartRateGraph(heartRate: [0: HeartRateMinMax(min:20, max: 60), 23: HeartRateMinMax(min: 110, max: 200)], underline: 60)
     }
 }
