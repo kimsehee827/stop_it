@@ -20,8 +20,138 @@ class HeartRateModel {
     var averageHeartRate: Double?
     var sampleCount: Int = 0
     var lastFetchTime: Date?
+    var underline: Double?
     
     private init() {}
+    
+    /// 휴식시간 구하기
+    /// 외부에서 호출 가능.
+    /// 앱이 켜지고 로그인이 되고, studyTime을 디비에서 불러오고, 그 이후 호출하면 됨.
+    func getAdditionalRest() {
+        guard let studyTime = StudyTimeModel.shared.todayStudyTime else {
+            return
+        }
+        let onlyStudyTime = getOnlyStudyTime(studyTime: studyTime)
+        let exceptRest = exceptRestHeartRate(rests: studyTime.rests, target: onlyStudyTime)
+        let avg = getAvgHeartRateInStudyTime(heartRate: exceptRest)
+        let rests = getSleepTimeAfterLastRest(avg: avg)
+        
+        self.underline = Double(avg) * 0.9
+        
+        StudyTimeModel.shared.addRests(rests: rests)
+    }
+    
+    // self.heartRate에서 공부시간만 구하기
+    private func getOnlyStudyTime(studyTime: StudyTime) -> [HeartRate] {
+        let heartRate = self.heartRate
+        let start = studyTime.startTime
+        let end = studyTime.endTime
+        
+        var startIdx, endIdx: Int?
+        
+        for i in 0..<heartRate.count {
+            if startIdx == nil && heartRate[i].date >= start {
+                startIdx = i
+            } else if startIdx != nil && endIdx == nil && end != nil && heartRate[i].date >= end! {
+                endIdx = i - 1
+                break
+            }
+        }
+        
+        if endIdx == nil {
+            endIdx = heartRate.count - 1
+        }
+        
+        return Array(heartRate[startIdx!...endIdx!])
+    }
+    
+    // target 에서 휴식시간을 모두 제외하기
+    private func exceptRestHeartRate(rests: [Rest], target: [HeartRate]) -> [HeartRate] {
+        var heartRate = target
+        
+        for rest in rests {
+            var startIdx, endIdx: Int?
+            for i in 0..<heartRate.count {
+                if startIdx == nil && heartRate[i].date >= rest.start {
+                    startIdx = i
+                } else if startIdx != nil && endIdx == nil && rest.end != nil && heartRate[i].date >= rest.end! {
+                    endIdx = i - 1
+                    break
+                }
+            }
+            
+            if startIdx == nil {
+                continue
+            }
+            
+            if endIdx == nil {
+                endIdx = heartRate.count - 1
+            }
+            
+            heartRate.removeSubrange(startIdx!...endIdx!)
+        }
+        
+        return heartRate
+    }
+    
+    // 휴식시간을 제외한 모든 공부시간의 심박수 평균 구하기
+    private func getAvgHeartRateInStudyTime(heartRate: [HeartRate]) -> Int {
+        var sum: Double = 0
+        for rate in heartRate {
+            sum += rate.heartRate
+        }
+        return Int(sum / Double(heartRate.count))
+    }
+    
+    // 맨 마지막 측정시간 이후로 평균보다 10퍼센트 떨어진 심박수 구간 구하기.
+    private func getSleepTimeAfterLastRest(avg: Int) -> [Rest] {
+        let underline = Double(avg) * 0.9
+        var lastCalcTime: Date?
+        if let time = StudyTimeModel.shared.todayStudyTime?.lastCalcTime {
+            lastCalcTime = time
+        }
+        
+        var heartRate = self.heartRate
+        
+        if let lastCalcTime = lastCalcTime {
+            var idx = -1
+            for rate in heartRate {
+                if rate.date <= lastCalcTime {
+                    idx += 1
+                } else {
+                    break
+                }
+            }
+            if idx != -1 {
+                heartRate.removeSubrange(0...idx)
+            }
+        }
+        
+        var rests: [Rest] = []
+        var check: Bool = false
+        var start, end: Date?
+        
+        for rate in heartRate {
+            if rate.heartRate <= underline {
+                if check == false {
+                    start = rate.date
+                    check = true
+                } else {
+                    end = rate.date
+                }
+            } else if rate.heartRate > underline && check == true {
+                if end == nil {
+                    end = rate.date 
+                }
+                rests.append(Rest(start: start!, end: end))
+                check = false
+                start = nil
+                end = nil
+            }
+        }
+        
+        return rests
+    }
     
     func getHeartRateFromHK(complete: @escaping () -> Void) {
         guard let sampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else {

@@ -38,6 +38,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 HeartRateModel.shared.storeHeartRate(results: HeartRateModel.shared.heartRate)
                 HeartRateModel.shared.saveTodayHeartRate()
             }
+            TaskModel.setDB {
+                TaskModel.today.loadFromDB {
+                    
+                }
+                
+                TaskModel.yesterday.loadFromDB {
+                    
+                }
+            }
+            StudyTimeModel.shared.getStudyTimeFromDB(on: Date.getToday()) { studyTime in
+                StudyTimeModel.shared.todayStudyTime = studyTime
+                
+                HeartRateModel.shared.getAdditionalRest()
+            }
         }
     }
 
@@ -58,8 +72,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         // print("SceneDelegate - sceneDidEnterBackground - 백그라운드로 갔을 때, 홈 눌렀을 때")
+        
+        TaskModel.today.saveToDB()
+        TaskModel.yesterday.saveToDB()
+        StudyTimeModel.shared.saveTodayStudyTime()
     }
 
+    
 
 }
 

@@ -41,6 +41,7 @@ struct StudyTime {
         
         return total
     }
+    var lastCalcTime: Date?
 }
 
 class StudyTimeModel {
@@ -54,6 +55,20 @@ class StudyTimeModel {
         self.todayStudyTime = StudyTime(startTime: Date())
     }
     
+    /// rest 추가하려면 무조건 이걸로 해야 정렬됨.
+    func addRests(rests: [Rest]) {
+        for rest in rests {
+            self.todayStudyTime?.rests.append(rest)
+        }
+        self.todayStudyTime?.lastCalcTime = Date()
+        self.sortRest()
+    }
+    
+    func sortRest() {
+        self.todayStudyTime?.rests.sort(by: { $0.start < $1.start })
+    }
+    
+    /// 앱 꺼질때 불러줘야함
     func saveTodayStudyTime() {
         guard let studyTime = todayStudyTime  else {
             return
@@ -63,6 +78,7 @@ class StudyTimeModel {
         DatabaseModel.shared.saveTotalStudyTime(time: studyTime.totalStudyTime ?? 0)
         DatabaseModel.shared.saveRestTime(restTime: studyTime.totalRestTime ?? 0)
         DatabaseModel.shared.saveStudyEndTime(endTime: studyTime.endTime)
+        DatabaseModel.shared.saveLastCalcTime(time: studyTime.lastCalcTime)
         
         for rest in studyTime.rests {
             DatabaseModel.shared.saveRest(start: rest.start, end: rest.end)
@@ -70,12 +86,8 @@ class StudyTimeModel {
     }
     
     //dateformatter부분 삭제
-    func getStudyTime(on date: Date, complete: @escaping (StudyTime?) -> Void) {
-        // 오늘이면 오늘거 리턴 
-        guard !date.isToday else {
-            complete(self.todayStudyTime)
-            return
-        }
+    /// 앱 켜질때 오늘치 불러야함
+    func getStudyTimeFromDB(on date: Date, complete: @escaping (StudyTime?) -> Void) {
         
         DatabaseModel.shared.getStudyTimeFrom(on: date) { error, dataSnapshot in
             if let error = error {
@@ -88,11 +100,18 @@ class StudyTimeModel {
                 let studyTime = value!["studyTime"] as! Int
                 let restTime = value!["restTime"] as! Int
                 let rests = value!["rests"] as! NSDictionary
+                let lastCalcTime = value!["lastCalcTime"] as! String
                 
                 var st = StudyTime(startTime: Date.fromString(str: startTime)!)
                 st.endTime =  Date.fromString(str: endTime)!
                 st.savedStudyTime = studyTime
                 st.savedRestTime = restTime
+                
+                if lastCalcTime == "" {
+                    st.lastCalcTime = nil
+                } else {
+                    st.lastCalcTime = Date.fromString(str: lastCalcTime)
+                }
                 
                 for (start, end) in rests {
                     //print(start)

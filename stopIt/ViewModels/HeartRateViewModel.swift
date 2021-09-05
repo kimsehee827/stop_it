@@ -5,6 +5,7 @@ class HeartRateViewModel: ObservableObject {
     @Published var min: Int = 0
     @Published var max: Int = 0
     @Published var avg: Int = 0
+    @Published var underline: Double = 0
     
     func appear() {
         self.getTodayHeartRate()
@@ -24,6 +25,10 @@ class HeartRateViewModel: ObservableObject {
                 self.heartRate = User.shared.getHeartRateMinMax()
                 self.getMinMax()
                 self.avg = Int(User.shared.getAvgHeartRate())
+                HeartRateModel.shared.getAdditionalRest()
+                if let underline = HeartRateModel.shared.underline {
+                    self.underline = underline
+                }
             }
             
             

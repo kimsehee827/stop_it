@@ -71,7 +71,7 @@ class StepCountModel{
             
             for i in -7 ... -1{//지난 7일간의 휴식시간 구하기
                 let day = Calendar.current.date(byAdding: .day, value: i, to: today)!
-                StudyTimeModel.shared.getStudyTime(on: day){st in
+                StudyTimeModel.shared.getStudyTimeFromDB(on: day){st in
                     if((st) != nil){
                         for rest in st!.rests{
                             self.restDate.append(rest)

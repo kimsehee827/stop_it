@@ -31,6 +31,21 @@ class User {
             print("get heart rate complete")
             HeartRateModel.shared.storeHeartRate(results: HeartRateModel.shared.heartRate)
             HeartRateModel.shared.saveTodayHeartRate()
+            StudyTimeModel.shared.getStudyTimeFromDB(on: Date.getToday()) { studyTime in
+                StudyTimeModel.shared.todayStudyTime = studyTime
+                StudyTimeModel.shared.sortRest()
+                
+                HeartRateModel.shared.getAdditionalRest()
+            }
+        }
+        TaskModel.setDB {
+            TaskModel.today.loadFromDB {
+                
+            }
+            
+            TaskModel.yesterday.loadFromDB {
+                
+            }
         }
     }
     

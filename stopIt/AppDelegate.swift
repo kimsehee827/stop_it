@@ -35,8 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
-        SleepModel.shared.getSleepAnalysis()
-        
         
         //firebase cloud message
         //메시지 대리자 설정
@@ -110,7 +108,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     print(userInfo)
 
     // Change this to your preferred presentation option
-    completionHandler([[.alert, .sound]])
+    completionHandler([[.badge, .sound]])
   }
 
   func userNotificationCenter(_ center: UNUserNotificationCenter,

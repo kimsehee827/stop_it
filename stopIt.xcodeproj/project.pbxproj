@@ -56,15 +56,16 @@
 		7596B61E26E2453200B1BDB9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F426E2453200B1BDB9 /* Date.swift */; };
 		7596B61F26E2453200B1BDB9 /* StudyTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F526E2453200B1BDB9 /* StudyTimeModel.swift */; };
 		7596B62026E2453200B1BDB9 /* HealthKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F726E2453200B1BDB9 /* HealthKitModel.swift */; };
-		7596B62126E2453200B1BDB9 /* SleepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5F826E2453200B1BDB9 /* SleepModel.swift */; };
 		7596B62226E2453200B1BDB9 /* StepCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FA26E2453200B1BDB9 /* StepCountModel.swift */; };
 		7596B62326E2453200B1BDB9 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FB26E2453200B1BDB9 /* HeartRateModel.swift */; };
 		7596B62426E2453200B1BDB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FC26E2453200B1BDB9 /* User.swift */; };
 		7596B62526E2453200B1BDB9 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FD26E2453200B1BDB9 /* DatabaseModel.swift */; };
 		7596B62626E2453200B1BDB9 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596B5FE26E2453200B1BDB9 /* Task.swift */; };
-		7596B62726E2453200B1BDB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7596B5FF26E2453200B1BDB9 /* GoogleService-Info.plist */; };
 		7596B62826E2453200B1BDB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7596B60126E2453200B1BDB9 /* LaunchScreen.storyboard */; };
 		7596B6BB26E2524100B1BDB9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7596B6BA26E2524100B1BDB9 /* .gitignore */; };
+		B3A8A6DD26E4EADC0031451E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3A8A6DC26E4EADC0031451E /* GoogleService-Info.plist */; };
+		B3A8A6DE26E4EADC0031451E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3A8A6DC26E4EADC0031451E /* GoogleService-Info.plist */; };
+		B3A8A6DF26E4EADC0031451E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3A8A6DC26E4EADC0031451E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,15 +165,14 @@
 		7596B5F426E2453200B1BDB9 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		7596B5F526E2453200B1BDB9 /* StudyTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTimeModel.swift; sourceTree = "<group>"; };
 		7596B5F726E2453200B1BDB9 /* HealthKitModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitModel.swift; sourceTree = "<group>"; };
-		7596B5F826E2453200B1BDB9 /* SleepModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepModel.swift; sourceTree = "<group>"; };
 		7596B5FA26E2453200B1BDB9 /* StepCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCountModel.swift; sourceTree = "<group>"; };
 		7596B5FB26E2453200B1BDB9 /* HeartRateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateModel.swift; sourceTree = "<group>"; };
 		7596B5FC26E2453200B1BDB9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7596B5FD26E2453200B1BDB9 /* DatabaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		7596B5FE26E2453200B1BDB9 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		7596B5FF26E2453200B1BDB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7596B60226E2453200B1BDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7596B6BA26E2524100B1BDB9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B3A8A6DC26E4EADC0031451E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0AB460CFBF37C72105E0230 /* Pods-stopIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopIt.debug.xcconfig"; path = "Target Support Files/Pods-stopIt/Pods-stopIt.debug.xcconfig"; sourceTree = "<group>"; };
 		F3DDC948E87F8D47DB69F2C2 /* Pods-stopIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopIt.release.xcconfig"; path = "Target Support Files/Pods-stopIt/Pods-stopIt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,8 +239,8 @@
 		7596B58426E2434700B1BDB9 /* stopIt */ = {
 			isa = PBXGroup;
 			children = (
+				B3A8A6DC26E4EADC0031451E /* GoogleService-Info.plist */,
 				7596B60026E2453200B1BDB9 /* Base.lproj */,
-				7596B5FF26E2453200B1BDB9 /* GoogleService-Info.plist */,
 				7596B5F326E2453200B1BDB9 /* Models */,
 				7596B5CE26E2453200B1BDB9 /* ViewModels */,
 				7596B5D826E2453200B1BDB9 /* Views */,
@@ -405,9 +405,9 @@
 		7596B5F326E2453200B1BDB9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7596B5F626E2453200B1BDB9 /* HealthKit */,
 				7596B5F426E2453200B1BDB9 /* Date.swift */,
 				7596B5F526E2453200B1BDB9 /* StudyTimeModel.swift */,
-				7596B5F626E2453200B1BDB9 /* HealthKit */,
 				7596B5FC26E2453200B1BDB9 /* User.swift */,
 				7596B5FD26E2453200B1BDB9 /* DatabaseModel.swift */,
 				7596B5FE26E2453200B1BDB9 /* Task.swift */,
@@ -418,20 +418,11 @@
 		7596B5F626E2453200B1BDB9 /* HealthKit */ = {
 			isa = PBXGroup;
 			children = (
+				7596B5FA26E2453200B1BDB9 /* StepCountModel.swift */,
 				7596B5F726E2453200B1BDB9 /* HealthKitModel.swift */,
-				7596B5F826E2453200B1BDB9 /* SleepModel.swift */,
-				7596B5F926E2453200B1BDB9 /* StepCount */,
 				7596B5FB26E2453200B1BDB9 /* HeartRateModel.swift */,
 			);
 			path = HealthKit;
-			sourceTree = "<group>";
-		};
-		7596B5F926E2453200B1BDB9 /* StepCount */ = {
-			isa = PBXGroup;
-			children = (
-				7596B5FA26E2453200B1BDB9 /* StepCountModel.swift */,
-			);
-			path = StepCount;
 			sourceTree = "<group>";
 		};
 		7596B60026E2453200B1BDB9 /* Base.lproj */ = {
@@ -557,10 +548,10 @@
 			files = (
 				7596B6BB26E2524100B1BDB9 /* .gitignore in Resources */,
 				7596B59226E2434700B1BDB9 /* LaunchScreen.storyboard in Resources */,
-				7596B62726E2453200B1BDB9 /* GoogleService-Info.plist in Resources */,
 				7596B62826E2453200B1BDB9 /* LaunchScreen.storyboard in Resources */,
 				7596B58F26E2434700B1BDB9 /* Preview Assets.xcassets in Resources */,
 				7596B58C26E2434700B1BDB9 /* Assets.xcassets in Resources */,
+				B3A8A6DD26E4EADC0031451E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +561,7 @@
 			files = (
 				7596B59F26E2434800B1BDB9 /* Assets.xcassets in Resources */,
 				7596B59D26E2434800B1BDB9 /* Interface.storyboard in Resources */,
+				B3A8A6DE26E4EADC0031451E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +571,7 @@
 			files = (
 				7596B5BA26E2434900B1BDB9 /* Preview Assets.xcassets in Resources */,
 				7596B5B726E2434900B1BDB9 /* Assets.xcassets in Resources */,
+				B3A8A6DF26E4EADC0031451E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,7 +648,6 @@
 				7596B61626E2453200B1BDB9 /* TaskListView.swift in Sources */,
 				7596B60626E2453200B1BDB9 /* StudyTimeTableViewModel.swift in Sources */,
 				7596B60D26E2453200B1BDB9 /* CardView.swift in Sources */,
-				7596B62126E2453200B1BDB9 /* SleepModel.swift in Sources */,
 				7596B62226E2453200B1BDB9 /* StepCountModel.swift in Sources */,
 				7596B61926E2453200B1BDB9 /* HeartRateGraph.swift in Sources */,
 				7596B61F26E2453200B1BDB9 /* StudyTimeModel.swift in Sources */,

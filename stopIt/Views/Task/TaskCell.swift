@@ -22,6 +22,7 @@ struct TaskCell: View {
             }, onCommit: {
                     if !self.taskCellVM.task.title.isEmpty && self.taskCellVM.task.title.count < 20 {
                         self.onCommit(.success(self.taskCellVM.task))
+                        self.taskCellVM.onCommit()
                     }
                     else {
                         self.onCommit(.failure(.empty))

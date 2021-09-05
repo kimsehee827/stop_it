@@ -7,12 +7,11 @@ class TaskCellViewModel: ObservableObject, Identifiable {
     
     var id: String = ""
     private var cancellables = Set<AnyCancellable>()
+    var onCommit: () -> Void
     
-    static func newTask() -> TaskCellViewModel {
-        TaskCellViewModel(task: Task(title: "", completed: false))
-    }
-    
-    init(task: Task) {
+    init(task: Task, onCommit: @escaping () -> Void) {
+        self.onCommit = onCommit
+        
         self.task = task
   
         $task // (8)

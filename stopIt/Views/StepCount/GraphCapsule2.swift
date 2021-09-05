@@ -3,7 +3,7 @@ import SwiftUI
 struct GraphCapsule2: View {
     var totalStep: Int
     var step: Int
-    var height: CGFloat {
+    var width: CGFloat {
         if Int(0.1 * Double(totalStep))..<totalStep ~= step {
             return CGFloat(200 * (Double(step) / Double(totalStep)))
         } else if step >= totalStep {
@@ -17,12 +17,12 @@ struct GraphCapsule2: View {
     
     var body: some View {
         VStack {
-            ZStack(alignment: .bottomTrailing) {
+            ZStack(alignment: .leading) {
                 Capsule()
-                    .frame(width: 25, height: 200)
+                    .frame(width: 200, height: 25)
                     .foregroundColor(backgroundColor)
                 Capsule()
-                    .frame(width: 25, height: height)
+                    .frame(width: width, height: 25)
                     .foregroundColor(foregroundColor)
             }
         }

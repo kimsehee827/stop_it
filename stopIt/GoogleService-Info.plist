@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>916776825980-vr5ilhqd6h9eopo99t0qmq9sllu0b558.apps.googleusercontent.com</string>
+	<string>916776825980-pqtrrapcli6q360s1v51pm0msbtrtcn8.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.916776825980-vr5ilhqd6h9eopo99t0qmq9sllu0b558</string>
+	<string>com.googleusercontent.apps.916776825980-pqtrrapcli6q360s1v51pm0msbtrtcn8</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDALaAunu4Ke8fLC8ooCQmsUUckD58geSU</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.kelly.Front</string>
+	<string>com.jay.stopIt</string>
 	<key>PROJECT_ID</key>
 	<string>front-9d303</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:916776825980:ios:8230e8262eff07a0adc5f9</string>
+	<string>1:916776825980:ios:1b711f825a6341c3adc5f9</string>
+	<key>DATABASE_URL</key>
+	<string>https://front-9d303-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>

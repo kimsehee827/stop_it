@@ -20,7 +20,7 @@ struct HeartRateView: View {
                         .padding(.trailing, 15)
                     }
                     
-                    HeartRateGraph(heartRate: viewModel.heartRate)
+                    HeartRateGraph(heartRate: viewModel.heartRate, underline: CGFloat( viewModel.underline))
                     
                     MinMaxHeartRateView(minimumHR: viewModel.min, maximumHR: viewModel.max, averageHR: viewModel.avg)
                 }

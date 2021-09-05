@@ -4,11 +4,12 @@ struct HeartRateGraph: View {
     var heartRate: [Int: HeartRateMinMax]
     let max = 200.0
     let min = 20.0
+    var underline: CGFloat
     
     var body: some View {
         ZStack {
             Color.white
-            HeartRateGridView(color: Color("heartrate2"))
+            HeartRateGridView(color: Color("heartrate2"), underline: underline)
             VStack(spacing: 0) {
                 Spacer()
                 HStack(alignment: .bottom) {
@@ -61,6 +62,6 @@ struct HeartRateGraph: View {
 
 struct HeartRateGraph_Previews: PreviewProvider {
     static var previews: some View {
-        HeartRateGraph(heartRate: [0: HeartRateMinMax(min:60, max: 60), 23: HeartRateMinMax(min: 110, max: 155)])
+        HeartRateGraph(heartRate: [0: HeartRateMinMax(min:60, max: 60), 23: HeartRateMinMax(min: 110, max: 155)], underline: 88)
     }
 }

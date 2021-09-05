@@ -1,3 +1,10 @@
+//
+//  StudyTimeTableViewModel.swift
+//  Front
+//
+//  Created by 오인경 on 2021/08/29.
+//
+
 import Foundation
 
 /// 왼쪽 -> 오른쪽으로 드래그 시 이전 일주일의 기록 확인 가능
@@ -18,38 +25,38 @@ class StudyTimeTableViewModel: ObservableObject {
         // TODO
         // 일주일치 다 해야함.
         // 얘는 하루치만 해봄
-        // 이전 graphBarVM 다 없애고 다시 시작 
-        StudyTimeModel.shared.getStudyTime(on: Date.fromString(str: "2021-08-18-00-00-00")!) { studyTime in
+        // 이전 graphBarVM 다 없애고 다시 시작
+        StudyTimeModel.shared.getStudyTimeFromDB(on: Date.fromString(str: "2021-08-18-00-00-00")!) { studyTime in
             DispatchQueue.main.async {
                 self.graphBarVM.append(StudyTimeGraphBarViewModel(studyTime: studyTime, height: self.height))
             }
         }
-        StudyTimeModel.shared.getStudyTime(on: Date.fromString(str: "2021-08-19-00-00-00")!) { studyTime in
+        StudyTimeModel.shared.getStudyTimeFromDB(on: Date.fromString(str: "2021-08-19-00-00-00")!) { studyTime in
             DispatchQueue.main.async {
                 self.graphBarVM.append(StudyTimeGraphBarViewModel(studyTime: studyTime, height: self.height))
             }
         }
-        StudyTimeModel.shared.getStudyTime(on: Date.fromString(str: "2021-08-20-00-00-00")!) { studyTime in
+        StudyTimeModel.shared.getStudyTimeFromDB(on: Date.fromString(str: "2021-08-20-00-00-00")!) { studyTime in
             DispatchQueue.main.async {
                 self.graphBarVM.append(StudyTimeGraphBarViewModel(studyTime: studyTime, height: self.height))
             }
         }
-        StudyTimeModel.shared.getStudyTime(on: Date.fromString(str: "2021-08-21-00-00-00")!) { studyTime in
+        StudyTimeModel.shared.getStudyTimeFromDB(on: Date.fromString(str: "2021-08-21-00-00-00")!) { studyTime in
             DispatchQueue.main.async {
                 self.graphBarVM.append(StudyTimeGraphBarViewModel(studyTime: studyTime, height: self.height))
             }
         }
-        StudyTimeModel.shared.getStudyTime(on: Date.fromString(str: "2021-08-22-00-00-00")!) { studyTime in
+        StudyTimeModel.shared.getStudyTimeFromDB(on: Date.fromString(str: "2021-08-22-00-00-00")!) { studyTime in
             DispatchQueue.main.async {
                 self.graphBarVM.append(StudyTimeGraphBarViewModel(studyTime: studyTime, height: self.height))
             }
         }
-        StudyTimeModel.shared.getStudyTime(on: Date.fromString(str: "2021-08-23-00-00-00")!) { studyTime in
+        StudyTimeModel.shared.getStudyTimeFromDB(on: Date.fromString(str: "2021-08-23-00-00-00")!) { studyTime in
             DispatchQueue.main.async {
                 self.graphBarVM.append(StudyTimeGraphBarViewModel(studyTime: studyTime, height: self.height))
             }
         }
-        StudyTimeModel.shared.getStudyTime(on: Date.fromString(str: "2021-08-24-00-00-00")!) { studyTime in
+        StudyTimeModel.shared.getStudyTimeFromDB(on: Date.fromString(str: "2021-08-24-00-00-00")!) { studyTime in
             DispatchQueue.main.async {
                 self.graphBarVM.append(StudyTimeGraphBarViewModel(studyTime: studyTime, height: self.height))
             }
