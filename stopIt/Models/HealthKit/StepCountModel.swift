@@ -32,26 +32,37 @@ class StepCountModel{
              else {
                  return
          }
+
+        var start:[Date]=[]
+        var end:[Date]=[]
+        for i in restDate{
+            start.append(i.start)
+            end.append(i.end!)
+        }
         
-        let startDate = Calendar.current.date(byAdding: .day, value: -6, to: Date())
-        let endDate = Date()
+        if(start.count>=1){
+            for i in 0 ... start.count-1{
+                let startDate = start[i]
+                let endDate = end[i]
 
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions.strictStartDate)
+                let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions.strictStartDate)
 
-        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: 0, sortDescriptors: nil) { (hkSampleQuery,hkSampleArray,error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return;
+                let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: 0, sortDescriptors: nil) { (hkSampleQuery,hkSampleArray,error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return;
+                    }
+                    for sample: HKQuantitySample in (hkSampleArray as? [HKQuantitySample]) ?? [] {
+                        print(sample.quantity.doubleValue(for: .count()))
+                    }
+                    self.stepData = self.getStepDataArr(results: hkSampleArray!)
+                    
+                    complete()
+                }
+                HKHealthStore().execute(query)
             }
-            for sample: HKQuantitySample in (hkSampleArray as? [HKQuantitySample]) ?? [] {
-                print(sample.quantity.doubleValue(for: .count()))
-            }
-            self.stepData = self.getStepDataArr(results: hkSampleArray!)
-            
-            complete()
         }
 
-        HKHealthStore().execute(query)
     }
     
     func getStepDataArr(results: [HKSample]) -> [StepData]{
