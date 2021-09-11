@@ -83,4 +83,35 @@ extension Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: result)!
     }
     
+    func startOfWeek() -> Date? {
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return sunday
+    }
+    
+    func getAllWeekDays() -> [Date] {
+        var week = [Date]()
+        let startDay = self.startOfWeek()
+        
+        if startDay == nil {
+            return []
+        }
+        
+        week.append(startDay!)
+        
+        for i in 1..<7 {
+            let d = Calendar.current.date(byAdding: .day, value: i, to: startDay!)
+            week.append(d!)
+        }
+        
+        return week
+    }
+    
+    func before7Days() -> Date {
+        Calendar.current.date(byAdding: .day, value: -7, to: self)!
+    }
+    
+    func after7Days() -> Date {
+        Calendar.current.date(byAdding: .day, value: 7, to: self)!
+    }
 }

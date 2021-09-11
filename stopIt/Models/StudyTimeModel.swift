@@ -100,17 +100,18 @@ class StudyTimeModel {
                 let studyTime = value!["studyTime"] as! Int
                 let restTime = value!["restTime"] as! Int
                 let rests = value!["rests"] as! NSDictionary
-                let lastCalcTime = value!["lastCalcTime"] as! String
+                let lastCalcTime = value!["lastCalcTime"] as? String
                 
                 var st = StudyTime(startTime: Date.fromString(str: startTime)!)
                 st.endTime =  Date.fromString(str: endTime)!
                 st.savedStudyTime = studyTime
                 st.savedRestTime = restTime
+                st.lastCalcTime = nil
                 
-                if lastCalcTime == "" {
-                    st.lastCalcTime = nil
-                } else {
-                    st.lastCalcTime = Date.fromString(str: lastCalcTime)
+                if let lastCalcTime = lastCalcTime {
+                    if lastCalcTime != "" {
+                        st.lastCalcTime = Date.fromString(str: lastCalcTime)
+                    }
                 }
                 
                 for (start, end) in rests {
