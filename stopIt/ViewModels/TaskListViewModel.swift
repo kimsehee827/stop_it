@@ -17,16 +17,20 @@ class TaskListViewModel: ObservableObject {
         // 현재 로컬 테스트 데이터로 함
         self.targetTask = target
         
-        targetTask.loadFromDB {
-            DispatchQueue.main.async {
-                self.taskCellViewModels = self.targetTask.tasks.map { task in
-                    TaskCellViewModel(task: task, onCommit: self.onCommit)
+        TaskModel.setDB {
+            self.targetTask.loadFromDB {
+                print("in taskListViewModel.init()")
+                DispatchQueue.main.async {
+                    self.taskCellViewModels = self.targetTask.tasks.map { task in
+                        TaskCellViewModel(task: task, onCommit: self.onCommit)
+                    }
                 }
             }
         }
     }
     
-    func onCommit() {
+    func onCommit(task: Task) {
+        self.targetTask.updateTask(task: task)
         self.targetTask.saveToDB()
     }
 

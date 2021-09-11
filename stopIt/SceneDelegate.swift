@@ -40,11 +40,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
             TaskModel.setDB {
                 TaskModel.today.loadFromDB {
-                    
+                    print("in today sceneDidBecomeActive()")
                 }
                 
                 TaskModel.yesterday.loadFromDB {
-                    
+                    print("in yesterday sceneDidBecomeActive()")
                 }
             }
             StudyTimeModel.shared.getStudyTimeFromDB(on: Date.getToday()) { studyTime in

@@ -38,15 +38,9 @@ class User {
                 HeartRateModel.shared.getAdditionalRest()
             }
         }
-        TaskModel.setDB {
-            TaskModel.today.loadFromDB {
-                
-            }
-            
-            TaskModel.yesterday.loadFromDB {
-                
-            }
-        }
+        
+        print("login handler")
+
     }
     
     func logOutHandler() {

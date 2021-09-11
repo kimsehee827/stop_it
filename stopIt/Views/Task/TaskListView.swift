@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TaskListView: View {
-    @ObservedObject var taskListVM: TaskListViewModel = TaskListViewModel(target: TaskModel.today)
+    @ObservedObject var taskListVM: TaskListViewModel
     
     
     var title: String

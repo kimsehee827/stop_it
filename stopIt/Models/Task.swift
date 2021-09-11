@@ -61,9 +61,15 @@ class TaskModel {
             let secondCompleted = second["checked"] as! Bool
             
             
-            self.tasks = []
-            self.tasks.append(Task(title: firstTitle, completed: firstCompleted))
-            self.tasks.append(Task(title: secondTitle, completed: secondCompleted))
+            if self.tasks.count == 0 {
+                self.tasks.append(Task(title: firstTitle, completed: firstCompleted))
+                self.tasks.append(Task(title: secondTitle, completed: secondCompleted))
+            } else if self.tasks.count == 2 {
+                self.tasks[0].title = firstTitle
+                self.tasks[0].completed = firstCompleted
+                self.tasks[1].title = secondTitle
+                self.tasks[1].completed = secondCompleted
+            }
             
             complete()
         }
@@ -88,11 +94,20 @@ class TaskModel {
             
             // 오늘이 아니고 어제이면 -> 어제걸로 변경
             if date == Date.getYesterday().toString(dateFormat: "yyyy-MM-dd") {
-                let task = TaskModel(isToday: true)
-                task.loadFromDB {
-                    task.isToday = false
-                    task.saveToDB()
-                }
+                let task = data.value as! NSDictionary
+                let first = task["first"] as! NSDictionary
+                let second = task["second"] as! NSDictionary
+                
+                let firstTitle = first["title"] as! String
+                let firstCompleted = first["checked"] as! Bool
+                let secondTitle = second["title"] as! String
+                let secondCompleted = second["checked"] as! Bool
+                
+                var tasks: [Task] = []
+                tasks.append(Task(title: firstTitle, completed: firstCompleted))
+                tasks.append(Task(title: secondTitle, completed: secondCompleted))
+                DatabaseModel.shared.saveTask(date: Date.getYesterday(), isToday: false, task: tasks)
+                
                 DatabaseModel.shared.saveTask(date: Date.getToday(), isToday: true, task: emptyTask)
             } else if date != Date.getToday().toString(dateFormat: "yyyy-MM-dd") {  // 오늘이 아니고 어제도 아니면
                 // 어제 오늘 다 없앰.
@@ -101,6 +116,15 @@ class TaskModel {
             }
             
             complete()
+        }
+    }
+    
+    func updateTask(task: Task) {
+        for i in 0..<self.tasks.count {
+            if tasks[i].id == task.id {
+                tasks[i].title = task.title
+                tasks[i].completed = task.completed
+            }
         }
     }
 }

@@ -13,20 +13,20 @@ struct TaskCell: View {
                 .frame(width: 20, height: 20)
                 .onTapGesture {
                     self.taskCellVM.task.completed.toggle()
+                    self.taskCellVM.onCommit(taskCellVM.task)
                 }
-            TextField("20자 제한", text: $taskCellVM.task.title, onEditingChanged: { isStart in
-                    if self.taskCellVM.task.title.count > 20 {
-                        let idx = taskCellVM.task.title.index(taskCellVM.task.title.startIndex, offsetBy: 19)
-                        self.taskCellVM.task.title = String(taskCellVM.task.title[..<idx])
-                    }
-            }, onCommit: {
-                    if !self.taskCellVM.task.title.isEmpty && self.taskCellVM.task.title.count < 20 {
-                        self.onCommit(.success(self.taskCellVM.task))
-                        self.taskCellVM.onCommit()
-                    }
-                    else {
-                        self.onCommit(.failure(.empty))
-                    }
+            TextField("20자 제한", text: $taskCellVM.task.title, onCommit: {
+                if self.taskCellVM.task.title.count > 20 {
+                    let idx = taskCellVM.task.title.index(taskCellVM.task.title.startIndex, offsetBy: 19)
+                    self.taskCellVM.task.title = String(taskCellVM.task.title[..<idx])
+                }
+                if !self.taskCellVM.task.title.isEmpty && self.taskCellVM.task.title.count <= 20 {
+                    self.onCommit(.success(self.taskCellVM.task))
+                    self.taskCellVM.onCommit(taskCellVM.task)
+                }
+                else {
+                    self.onCommit(.failure(.empty))
+                }
             })
                 .id(taskCellVM.id)
                 .foregroundColor(.black)

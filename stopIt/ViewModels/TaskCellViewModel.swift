@@ -7,9 +7,9 @@ class TaskCellViewModel: ObservableObject, Identifiable {
     
     var id: String = ""
     private var cancellables = Set<AnyCancellable>()
-    var onCommit: () -> Void
+    var onCommit: (Task) -> Void
     
-    init(task: Task, onCommit: @escaping () -> Void) {
+    init(task: Task, onCommit: @escaping (Task) -> Void) {
         self.onCommit = onCommit
         
         self.task = task
