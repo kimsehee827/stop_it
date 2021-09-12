@@ -38,7 +38,7 @@ struct StepCountGraph: View {
                 .foregroundColor(.secondary)
                 .padding([.top], 10)
         }
-        //.onAppear(perform: viewModel.getCounts)
+        .onAppear(perform: viewModel.getCounts)
     }
 
 }

@@ -55,7 +55,7 @@ class StepCountModel{
                     for sample: HKQuantitySample in (hkSampleArray as? [HKQuantitySample]) ?? [] {
                         print(sample.quantity.doubleValue(for: .count()))
                     }
-                    self.stepData = self.getStepDataArr(results: hkSampleArray!)
+                    self.stepData+=self.getStepDataArr(results: hkSampleArray!)
                     
                     complete()
                 }
