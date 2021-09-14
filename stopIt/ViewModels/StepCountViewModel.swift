@@ -21,7 +21,7 @@ class StepCountViewModel: ObservableObject {
                 
                 StepCountModel.shared.makeDayStepData()
                 
-                self.stepSum=StepCountModel.shared.stepSum
+                self.stepSum+=StepCountModel.shared.stepSum
             }
         })
         
