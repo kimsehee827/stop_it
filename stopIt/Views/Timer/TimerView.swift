@@ -1,4 +1,5 @@
 import SwiftUI
+import WatchConnectivity
 
 struct TimerView: View {
     @ObservedObject var viewModel = TimerViewModel()
@@ -21,6 +22,9 @@ struct TimerView: View {
                     
                     Button(action: {
                         viewModel.buttonClicked()
+                        self.viewModel.session.sendMessage(["message" : viewModel.timeString], replyHandler: nil) { (error) in
+                            print(error.localizedDescription)
+                        }
                     }, label: {
                         ZStack {
                             Circle()
