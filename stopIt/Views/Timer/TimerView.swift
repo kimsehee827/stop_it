@@ -43,6 +43,7 @@ struct TimerView: View {
             .frame(height: 120)
             .background(Color(red: 103/255, green: 120/255, blue: 180/255))
         }
+        .onAppear(perform: viewModel.onAppear)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)

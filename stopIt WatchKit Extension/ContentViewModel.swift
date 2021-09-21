@@ -33,7 +33,7 @@ class ContentViewModel: NSObject,  WCSessionDelegate, ObservableObject{
         DispatchQueue.main.async {
             self.messageText = message["message"] as? String ?? "Unknown"
         }
-        messagefromIPhone()
+        //messagefromIPhone()
     }
     
     @State private var output: String?

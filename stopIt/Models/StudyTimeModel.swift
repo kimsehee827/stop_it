@@ -99,11 +99,11 @@ class StudyTimeModel {
                 let endTime = value!["endTime"] as! String
                 let studyTime = value!["studyTime"] as! Int
                 let restTime = value!["restTime"] as! Int
-                let rests = value!["rests"] as! NSDictionary
+                let rests = value!["rests"] as? NSDictionary
                 let lastCalcTime = value!["lastCalcTime"] as? String
                 
                 var st = StudyTime(startTime: Date.fromString(str: startTime)!)
-                st.endTime =  Date.fromString(str: endTime)!
+                st.endTime =  Date.fromString(str: endTime) ?? nil
                 st.savedStudyTime = studyTime
                 st.savedRestTime = restTime
                 st.lastCalcTime = nil
@@ -113,17 +113,18 @@ class StudyTimeModel {
                         st.lastCalcTime = Date.fromString(str: lastCalcTime)
                     }
                 }
-                
-                for (start, end) in rests {
-                    //print(start)
-                    let restStart = Date.fromString(str: start as! String)!
-                    var restEnd: Date?
-                    if (end as! String) == "" {
-                        restEnd = nil
-                    } else {
-                        restEnd = Date.fromString(str: (end as! String))!
+                if let rests = rests {
+                    for (start, end) in rests {
+                        //print(start)
+                        let restStart = Date.fromString(str: start as! String)!
+                        var restEnd: Date?
+                        if (end as! String) == "" {
+                            restEnd = nil
+                        } else {
+                            restEnd = Date.fromString(str: (end as! String))!
+                        }
+                        st.rests.append(Rest(start: restStart, end: restEnd))
                     }
-                    st.rests.append(Rest(start: restStart, end: restEnd))
                 }
                 complete(st)
             } else {

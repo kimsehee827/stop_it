@@ -31,9 +31,20 @@ class HeartRateModel {
         guard let studyTime = StudyTimeModel.shared.todayStudyTime else {
             return
         }
+        
+        // 공부 시작후 15분 동안은 측정하지 않음
+        guard Date() - studyTime.startTime > 60 * 15 else {
+            return
+        }
+        
         let onlyStudyTime = getOnlyStudyTime(studyTime: studyTime)
         let exceptRest = exceptRestHeartRate(rests: studyTime.rests, target: onlyStudyTime)
         let avg = getAvgHeartRateInStudyTime(heartRate: exceptRest)
+        
+        guard avg != -1 else {
+            return
+        }
+        
         let rests = getSleepTimeAfterLastRest(avg: avg)
         
         self.underline = Double(avg) * 0.9
@@ -62,7 +73,11 @@ class HeartRateModel {
             endIdx = heartRate.count - 1
         }
         
-        return Array(heartRate[startIdx!...endIdx!])
+        if startIdx != nil {
+            return Array(heartRate[startIdx!...endIdx!])
+        } else {
+            return []
+        }
     }
     
     // target 에서 휴식시간을 모두 제외하기
@@ -100,7 +115,12 @@ class HeartRateModel {
         for rate in heartRate {
             sum += rate.heartRate
         }
-        return Int(sum / Double(heartRate.count))
+        
+        if heartRate.count != 0 {
+            return Int(sum / Double(heartRate.count))
+        } else {
+            return -1
+        }
     }
     
     // 맨 마지막 측정시간 이후로 평균보다 10퍼센트 떨어진 심박수 구간 구하기.

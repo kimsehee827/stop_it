@@ -29,6 +29,8 @@ class TimerViewModel: NSObject,ObservableObject, WCSessionDelegate{
     var mainTimer: Timer?
     var timeCount: Int = 0
     
+    var initializerTimer: Timer?
+    
     var session: WCSession
     init(session: WCSession = .default){
         self.session = session
@@ -80,13 +82,40 @@ class TimerViewModel: NSObject,ObservableObject, WCSessionDelegate{
         }
     }
     
+    func onAppear() {
+//        initializerTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { (_) in
+//            if let _ = StudyTimeModel.shared.todayStudyTime {
+//                DispatchQueue.main.async {
+//                    self.isStart = true
+//                    self.startTimer()
+//                    self.initializerTimer?.invalidate()
+//                    self.initializerTimer = nil
+//                }
+//            }
+//        })
+    }
+    
     func buttonClicked() {
         isStart.toggle()
         if isStart {
             startTimer()
+            if StudyTimeModel.shared.todayStudyTime == nil {
+                StudyTimeModel.shared.startStudy()
+            } else {
+                StudyTimeModel.shared.todayStudyTime?.endTime = nil
+                if StudyTimeModel.shared.todayStudyTime!.rests.count > 0 {
+                    let idx = StudyTimeModel.shared.todayStudyTime!.rests.count - 1
+                    StudyTimeModel.shared.todayStudyTime?.rests[idx].end = Date()
+                }
+            }
         } else {
             stopTimer()
+            if StudyTimeModel.shared.todayStudyTime != nil {
+                StudyTimeModel.shared.addRests(rests: [Rest(start: Date(), end: nil)])
+                StudyTimeModel.shared.todayStudyTime?.endTime = Date()
+            }
         }
+        StudyTimeModel.shared.saveTodayStudyTime()
     }
     
     func send(){
@@ -115,6 +144,9 @@ class TimerViewModel: NSObject,ObservableObject, WCSessionDelegate{
     
     func startTimer() {
         sendToStart()
+        if let today = StudyTimeModel.shared.todayStudyTime {
+            self.timeCount = today.totalStudyTime ?? 0
+        }
         mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.timeCount += 1
             DispatchQueue.main.async {
