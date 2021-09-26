@@ -28,6 +28,7 @@ class StepCountModel{
     private init() {}
     
     func getSteps(complete: @escaping ()-> Void) {
+        
         guard let sampleType = HKObjectType.quantityType(forIdentifier: .stepCount)
              else {
                  return
@@ -66,35 +67,62 @@ class StepCountModel{
     
     /// getSteps() 이후에 호출
     func makeDayStepData() {
-            let today = Date()
-            var idx=0
-            
-            for i in -7 ... -1{//지난 7일간의 휴식시간 구하기
-                let day = Calendar.current.date(byAdding: .day, value: i, to: today)!
-                StudyTimeModel.shared.getStudyTimeFromDB(on: day){st in
-                    if((st) != nil){
-                        for rest in st!.rests{
-                            self.restDate.append(rest)
-                        }
+        let today = Date()
+        var idx=0
+
+        for i in -7 ... -1{//지난 7일간의 휴식시간 구하기
+            let day = Calendar.current.date(byAdding: .day, value: i, to: today)!
+            StudyTimeModel.shared.getStudyTimeFromDB(on: day){st in
+                if((st) != nil){
+                    for rest in st!.rests{
+                        self.restDate.append(rest)
                     }
                 }
             }
-            for rest in self.restDate{
-                print(rest.start.toString())
-            }
-            
-            
-            for rest in restDate{ //휴식시간의 걸음수
-                var count=0
-                for _ in 0..<stepData.count{ //걸음수 계산
-                    if(idx < stepData.count && rest.start<=stepData[idx].strDate && rest.end!>=stepData[idx].endDate){
-                        count+=stepData[idx].steps
-                        idx+=1
-                    }
-                }
-                stepSum.append(StepSum(date: stepData[idx].strDate, steps: count))
-            }
-     
         }
+        for rest in self.restDate{
+            print(rest.start.toString())
+        }
+        
+        
+        for rest in restDate{ //휴식시간의 걸음수
+            var count=0
+            for _ in 0..<stepData.count{ //걸음수 계산
+                let startTarget = Calendar.current.dateComponents([.day, .hour, .minute, .second], from:rest.start)
+                let endTarget = Calendar.current.dateComponents([.day, .hour, .minute, .second], from:rest.end!)
+                let startDate = Calendar.current.dateComponents([.day, .hour, .minute, .second], from:stepData[idx].strDate)
+                let endDate = Calendar.current.dateComponents([.day, .hour, .minute, .second], from:stepData[idx].endDate)
+                
+                let include=includeTime(startTarget, endTarget, startDate, endDate)
+                if(idx < stepData.count && include){
+                    count+=stepData[idx].steps
+                    idx+=1
+                }
+            }
+            stepSum.append(StepSum(date: stepData[idx].strDate, steps: count))
+        }
+    }
+
+    func includeTime(_ startT: DateComponents, _ endT: DateComponents, _ startD: DateComponents, _ endD: DateComponents) -> Bool{
+        if(startT.day != startD.day){
+            return false
+        }
+        
+        else if(startT.hour!>startD.hour! && endT.hour!<endD.hour!){
+            return true
+        }
+        
+        else if(startT.hour==startD.hour && startT.minute!<startD.minute! && endT.hour==endD.hour && endT.minute!<endD.minute!){
+            return true
+        }
+        
+        else if(startT.hour==startD.hour && startT.minute==startD.minute && startT.second!<=startD.second! && endT.hour==endD.hour && endT.minute==endD.minute && endT.second!<=endD.second!){
+            return true
+        }
+        
+        else{
+            return false
+        }
+    }
 }
    
